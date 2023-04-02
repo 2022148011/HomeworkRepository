@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Pretendard-Regular';
+}
+#title_container {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+#title {
+    display: block;
+    font-size: 300%;
+    font-weight: 700;
+    font-family: 'SBAggroB';
+}
+#subtitle {
+    display: block;
+    font-size: 180%;
+    font-weight: 700;
+    font-family: 'SBAggroB';
+}
+hr {
+    width: 400px;
+}
+#body_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: thin solid white;
+}
+#box1 {
+    border: thin solid white;
+    margin: 0px;
+}
+.input_box {
+    border: thin solid white;
+    margin-bottom: 1.5em;
+    width: fit-content;
+}
+.input_name {
+    display: block;
+    margin-bottom: .4em;
+    font-weight: 600;
+}
+.input_name2 {
+    display: inline;
+    margin-bottom: .4em;
+    font-weight: 600;
+}
+.required {
+    color: red;
+}
+input {
+    display: block;
+    font-size: 1em;
+    font-weight: 300;
+    width: 310px;
+    height: 30px;
+}
+.radio {
+    display: inline;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 2px;
+    accent-color: black;
+}
+.checkbox {
+    display: inline;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 2px;
+    accent-color: black;
+}
+#submit {
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    border: none;
+    border-radius: 3px;
+    background-color: black;
+    padding: .5em;
+    color: white;
+    font-size: large;
+    font-weight: 500;
+}
+a {
+    display: block;
+    margin-bottom: 60px;
+    text-align: center;
+    color: grey;
+    text-decoration-line: none;
+}

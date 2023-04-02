@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>회원가입 - 아무거나 잡화점</title>
+    </head>
+    <body>
+        <div id="title_container">
+            <span id="title">아무거나 잡화점</span>
+            <span id="subtitle">ANYTHING STORE</span>
+        </div>
+        <hr>
+        <br>
+        <br>
+        <div id="body_container">
+            <div id="box1">
+                <form method="post" action="">
+                    <div class="input_box">
+                        <span class="input_name">이름<span class="required">*</span></span>
+                        <input name="name" type="text" required autofocus>
+                    </div>
+                    <div class="input_box">
+                        <span class="input_name">생년월일</span>
+                        <input name="date" type="date" step="1">
+                    </div>
+                    <div class="input_box">
+                        <span class="input_name">전화번호</span>
+                        <input name="number" type="tel" pattern="\d{3}-\d{4}-\d{4}" placeholder="010-XXXX-XXXX">
+                    </div>
+                    <div class="input_box">
+                        <span class="input_name">이메일</span>
+                        <input name="email" type="email" placeholder="anything@gmail.com">
+                    </div>
+                    <div class="input_box">
+                        <span class="input_name">아이디<span class="required">*</span></span>
+                        <input name="id" type="text" required autocomplete="off">
+                    </div>
+                    <div class="input_box">
+                        <span class="input_name">비밀번호<span class="required">*</span></span>
+                        <input name="pw" type="password" required>
+                    </div>
+                    <div class="input_box">
+                        <span class="input_name">비밀번호 확인<span class="required">*</span></span>
+                        <input name="pw" type="password" required>
+                    </div>
+                    <div class="input_box">
+                        <label class="input_name2">SMS 수신 동의 <input name="agree_reception" class="checkbox" type="checkbox" value="sns" checked></label>
+                        <br><br>
+                        <label class="input_name2">이메일 수신 동의 <input name="agree_reception" class="checkbox" type="checkbox" value="email" checked></label>
+                        <br><br>
+                        <span class="input_name2">개인정보 수집 동의<span class="required">*</span></span>
+                        &nbsp;
+                        <label>동의함<input name="agree_personal_info" class="radio" type="radio" value="Y" required></label>
+                        <label>동의하지 않음<input name="agree_personal_info" class="radio" type="radio" value="N" checked></label>
+                    </div>
+                    <div id="button_box">
+                        <input id="submit" type="submit" value="회원가입">
+                        <a href="login.html">로그인</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
