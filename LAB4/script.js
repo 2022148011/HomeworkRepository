@@ -37,6 +37,7 @@ function initialize(products) {
   searchBtn.addEventListener('click', filterProducts);
 
   window.addEventListener('scroll', function() {
+    console.log('onscroll');
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
         loadLine();
     }
@@ -48,9 +49,11 @@ function initialize(products) {
       displayProduct(product);
     }
     currentLine = 1;
+    loading = false;
   }
 
   function loadLine() {
+    console.log('loadLine()');
     loading = true;
     currentLine++;
     const startIndex = (currentLine - 1) * productsPerLine;
