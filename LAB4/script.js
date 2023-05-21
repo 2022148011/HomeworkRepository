@@ -41,7 +41,7 @@ function initialize(products) {
     
   window.addEventListener('scroll', () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
-        console.log(loadLine);
+        console.log('loadLine()');
         loadLine();
     }});
 
@@ -136,6 +136,7 @@ function initialize(products) {
   }
 
   function displayProduct(product) {
+    console.log('displayProduct()');
 
     const bookContainer = document.createElement('div');
     bookContainer.setAttribute('class', 'book-container');
