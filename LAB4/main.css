@@ -26,6 +26,14 @@ section {
     width: 280px;
     height: 100%;
     margin: 20px 0px;
+    animation-name: title-animation;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+}
+
+@keyframes title-animation {
+    from { width: 100%; }
+    to { width: 280px; }
 }
 
 .title {
