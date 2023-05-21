@@ -125,7 +125,7 @@ async function initialize(products) {
     imageContainer.setAttribute('class', 'image-container');
 
     const clickContainer = document.createElement('div');
-    imageContainer.setAttribute('class', 'click-container');
+    clickContainer.setAttribute('class', 'click-container');
 
     const description = document.createElement('div');
     description.setAttribute('class', 'click-description');
