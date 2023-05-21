@@ -129,9 +129,9 @@ function initialize(products) {
     }
   }
 
-  function displayProduct(product) {
+  async function displayProduct(product) {
     const url = `images/${product.image}`;
-    fetch(url)
+     await fetch(url)
       .then( response => {
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
