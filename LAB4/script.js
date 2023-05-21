@@ -23,28 +23,24 @@ function initialize(products) {
     let searchTermGroup;
     let sortedGroup;
 
-    //1. 첫번째 줄 (4개) 표시
-    //2. 스크롤 -> 화면길이 넘어가면 2번째 줄 product들을 append
+    let currentLine;
+    const productsPerLine = 4;
+    let loading = false;
 
-    let currentLine; // 현재 페이지
-    const productsPerLine = 4; // 페이지당 표시할 제품 수
-    let loading = false; // 로딩 상태
-
-    document.addEventListener('DOMContentLoaded', function() {
-        sortedGroup = products.slice();
-        firstLoad();
-        window.addEventListener('scroll', function() {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
-              loadLine();
-            }
-          });
-      });
+    sortedGroup = products.slice();
+    firstLoad();
       
     categoryGroup = [];
     searchTermGroup = [];
     sortedGroup = [];
 
   searchBtn.addEventListener('click', filterProducts);
+
+  window.addEventListener('scroll', function() {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
+        loadLine();
+    }
+});
 
   function firstLoad() {
     const initialProducts = sortedGroup.slice(0, productsPerLine);
