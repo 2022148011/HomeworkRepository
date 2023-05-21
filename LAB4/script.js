@@ -33,7 +33,6 @@ function initialize(products) {
   searchBtn.addEventListener('click', filterProducts);
 
   window.addEventListener('scroll', function() {
-    console.log('onscroll');
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
         loadLine();
     }
@@ -49,16 +48,11 @@ function initialize(products) {
   }
 
   function loadLine() {
-    console.log('loadLine()');
-    console.log('sortedGroup: ', sortedGroup);
     loading = true;
     currentLine++;
     const startIndex = (currentLine - 1) * productsPerLine;
     const endIndex = (startIndex + productsPerLine > sortedGroup.length) ? sortedGroup.length : startIndex + productsPerLine;
     const newLine = sortedGroup.slice(startIndex, endIndex);
-    console.log('start: ', startIndex);
-    console.log('end: ', endIndex);
-    console.log('newLine: ', newLine);
     for (const product of newLine) {
         displayProduct(product);
     }
@@ -115,7 +109,6 @@ function initialize(products) {
     } else {
       sortedGroup = searchTermGroup.sort((a, b) => b.price - a.price);
     }
-    console.log(sortedGroup);
     updateDisplay();
   }
 
@@ -135,7 +128,6 @@ function initialize(products) {
   }
 
   function displayProduct(product) {
-    console.log('displayProduct()');
 
     const bookContainer = document.createElement('div');
     bookContainer.setAttribute('class', 'book-container');
