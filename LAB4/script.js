@@ -26,15 +26,14 @@ function initialize(products) {
     //1. 첫번째 줄 (4개) 표시
     //2. 스크롤 -> 화면길이 넘어가면 2번째 줄 product들을 append
 
-    let currentLine = 0; // 현재 페이지
+    let currentLine = 1; // 현재 페이지
     const productsPerLine = 4; // 페이지당 표시할 제품 수
     let loading = false; // 로딩 상태
 
-  sortedGroup = products;
-  while (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
-    loadLine();
-}
-loadLine();
+    const initialProducts = products.slice(0, productsPerLine);
+    for (const product of initialProducts) {
+      displayProduct(product);
+    }
 
   categoryGroup = [];
   searchTermGroup = [];
