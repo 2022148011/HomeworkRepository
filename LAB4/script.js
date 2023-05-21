@@ -34,10 +34,10 @@ function initialize(products) {
         sortedGroup = products.slice();
         firstLoad();
         window.addEventListener('scroll', function() {
-          if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
-            loadLine();
-          }
-        });
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
+              loadLine();
+            }
+          });
       });
       
     categoryGroup = [];
