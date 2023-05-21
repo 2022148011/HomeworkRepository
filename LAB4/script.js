@@ -33,7 +33,8 @@ function initialize(products) {
   sortedGroup = products;
   while (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
     loadLine();
-    }
+}
+loadLine();
 
   categoryGroup = [];
   searchTermGroup = [];
