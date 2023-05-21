@@ -123,13 +123,16 @@ function initialize(products) {
     const imageContainer = document.createElement('div');
     imageContainer.setAttribute('class', 'image-container');
 
+    const clickContainer = document.createElement('div');
+    imageContainer.setAttribute('class', 'click-container');
+
     const description = document.createElement('div');
     description.setAttribute('class', 'click-description');
     description.innerText = product.description;
 
     const rating = document.createElement('div');
     rating.setAttribute('class', 'click-rating');
-    rating.innerText = product.rating;
+    rating.innerText = '★ ' + product.rating;
 
     const bookImage = document.createElement('img');
     bookImage.setAttribute('class', 'book-image');
@@ -154,8 +157,9 @@ function initialize(products) {
     bookContainer.appendChild(bookInfo);
     bookContainer.appendChild(bookPrice);
     imageContainer.appendChild(bookImage);
-    imageContainer.appendChild(description);
-    imageContainer.appendChild(rating);
+    imageContainer.appendChild(clickContainer);
+    clickContainer.appendChild(rating);
+    clickContainer.appendChild(description);
 
     bookImage.addEventListener('click', function () {
       bookImage.style.display = 'none';
