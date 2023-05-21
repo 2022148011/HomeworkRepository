@@ -15,22 +15,49 @@ function initialize(products) {
   const searchBtn = document.querySelector('#searchBtn');
   const productListContainer = document.querySelector('.book-list-container');
 
-  let lastCategory = category.value;
-  let lastSearch = '';
-  let lastSort = sort.value;
+    let lastCategory = category.value;
+    let lastSearch = '';
+    let lastSort = sort.value;
 
-  let categoryGroup;
-  let searchTermGroup;
-  let sortedGroup;
+    let categoryGroup;
+    let searchTermGroup;
+    let sortedGroup;
+
+    //1. 첫번째 줄 (4개) 표시
+    //2. 스크롤 -> 화면길이 넘어가면 2번째 줄 product들을 append
+
+    let currentLine = 0; // 현재 페이지
+    const productsPerLine = 4; // 페이지당 표시할 제품 수
+    let loading = false; // 로딩 상태
 
   sortedGroup = products;
-  updateDisplay();
+  loadLine();
 
   categoryGroup = [];
   searchTermGroup = [];
   sortedGroup = [];
 
   searchBtn.addEventListener('click', filterProducts);
+
+  window.onscroll = () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
+        loadLine();
+    }
+  }
+
+  function loadLine() {
+    loading = true;
+    currentLine++;
+    const startIndex = (currentLine - 1) * productsPerLine;
+    const endIndex = (startIndex + productsPerLine > sortedGroup.length) ? sortedGroup.length : startIndex + productsPerLine;
+    const newLine = sortedGroup.slice(startIndex, endIndex);
+
+    for (const product of newLine) {
+        displayProduct(product);
+    }
+
+    loading = false;
+  }
 
   function filterProducts(e) {
     e.preventDefault();
@@ -55,7 +82,7 @@ function initialize(products) {
 
   function filterCategory() {
     if (category.value === '전체') {
-      categoryGroup = products;
+      categoryGroup = products.slice();
     } else {
       categoryGroup = products.filter(product => product.category === category.value);
     }
@@ -64,7 +91,7 @@ function initialize(products) {
 
   function filterSearchTerm() {
     if (searchTerm.value.trim() === '') {
-      searchTermGroup = categoryGroup;
+      searchTermGroup = categoryGroup.slice();
     } else {
       const term = searchTerm.value.trim();
       searchTermGroup = categoryGroup.filter(
@@ -76,12 +103,13 @@ function initialize(products) {
 
   function sortProducts() {
     if (sort.value === '제목순') {
-      sortedGroup = searchTermGroup;
+      sortedGroup = searchTermGroup.slice();
     } else if (sort.value === '최저가순') {
       sortedGroup = products.sort((a, b) => a.price - b.price);
     } else {
       sortedGroup = products.sort((a, b) => b.price - a.price);
     }
+    console.log(sortedGroup);
     updateDisplay();
   }
 

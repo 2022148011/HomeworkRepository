@@ -126,12 +126,12 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 15;
 }
 
 .click-description {
     display: none;
     color: white;
+    margin: 15;
 }
 
 .click-rating {
