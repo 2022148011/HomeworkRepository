@@ -8,7 +8,7 @@ fetch('product.json')
   .then(json => initialize(json))
   .catch(err => console.error(`Fetch problem: ${err.message}`));
 
-async function initialize(products) {
+function initialize(products) {
   const category = document.querySelector('#category');
   const searchTerm = document.querySelector('#searchTerm');
   const sort = document.querySelector('#sort');
@@ -101,21 +101,20 @@ async function initialize(products) {
     }
   }
 
-  async function displayProduct(product) {
+  function displayProduct(product) {
     const url = `images/${product.image}`;
-    try {
-        const response = await fetch(url);
+    fetch(url)
+      .then( response => {
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
         }
-        const blob = await response.blob();
-        await showProduct(blob, product);
-      } catch (err) {
-        console.error(`Fetch problem: ${err.message}`);
-      }
+        return response.blob();
+      })
+      .then( blob => showProduct(blob, product) )
+      .catch( err => console.error(`Fetch problem: ${err.message}`) );
   }
 
-  async function showProduct(blob, product) {
+  function showProduct(blob, product) {
     const objectURL = URL.createObjectURL(blob);
 
     const bookContainer = document.createElement('div');
@@ -162,11 +161,11 @@ async function initialize(products) {
     clickContainer.appendChild(rating);
     clickContainer.appendChild(description);
 
-    bookImage.addEventListener('click', function () {
+    imageContainer.addEventListener('click', function () {
       bookImage.style.display = 'none';
       imageContainer.style.backgroundColor = 'black';
-      rating.style.color = 'white';
-      description.style.color = 'white';
+      rating.style.display = 'block';
+      description.style.display = 'block';
     });
   }
 
