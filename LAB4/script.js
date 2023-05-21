@@ -146,7 +146,7 @@ function initialize(products) {
 
     const bookPrice = document.createElement('div');
     bookPrice.setAttribute('class', 'book-price');
-    bookPrice.innerText = product.price;
+    bookPrice.innerText = formatPrice(product.price) + '원';
 
     productListContainer.appendChild(bookContainer);
     bookContainer.appendChild(imageContainer);
@@ -160,6 +160,12 @@ function initialize(products) {
     bookImage.addEventListener('click', function () {
       bookImage.style.display = 'none';
       imageContainer.style.backgroundColor = 'black';
+      rating.style.color = 'white';
+      description.style.color = 'white';
     });
+  }
+
+  function formatPrice(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 }

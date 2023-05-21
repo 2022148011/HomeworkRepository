@@ -111,16 +111,14 @@ hr {
     justify-content: space-around;
 }
 
-.image-container > * {
-    position: absolute;
-}
-
 .click-description {
-    color: white;
+    color: none;
+    padding: 15,
 }
 
 .click-rating {
-    color: white;
+    color: none;
+    font-size: 1.5em
 }
 
 .book-image {
