@@ -29,10 +29,6 @@ function initialize(products) {
 
     sortedGroup = products.slice();
     firstLoad();
-      
-    categoryGroup = [];
-    searchTermGroup = [];
-    sortedGroup = [];
 
   searchBtn.addEventListener('click', filterProducts);
 
@@ -54,6 +50,7 @@ function initialize(products) {
 
   function loadLine() {
     console.log('loadLine()');
+    console.log('sortedGroup: ', sortedGroup);
     loading = true;
     console.log('loading: ', loading);
     currentLine++;
