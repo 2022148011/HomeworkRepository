@@ -30,20 +30,21 @@ function initialize(products) {
     const productsPerLine = 4; // 페이지당 표시할 제품 수
     let loading = false; // 로딩 상태
 
-    sortedGroup = products.slice();
-    firstLoad();
-
+    document.addEventListener('DOMContentLoaded', function() {
+        sortedGroup = products.slice();
+        firstLoad();
+        window.addEventListener('scroll', function() {
+          if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
+            loadLine();
+          }
+        });
+      });
+      
     categoryGroup = [];
     searchTermGroup = [];
     sortedGroup = [];
 
   searchBtn.addEventListener('click', filterProducts);
-    
-  window.addEventListener('scroll', () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
-        console.log('loadLine()');
-        loadLine();
-    }});
 
   function firstLoad() {
     const initialProducts = sortedGroup.slice(0, productsPerLine);
@@ -129,6 +130,7 @@ function initialize(products) {
     if (sortedGroup.length === 0) {
       const para = document.createElement('p');
       para.textContent = "'" + searchTerm.value + "'에 대한 검색결과가 없습니다";
+      para.style.fontSize = '20px';
       productListContainer.appendChild(para);
     } else {
       firstLoad();
