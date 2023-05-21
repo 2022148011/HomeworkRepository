@@ -113,9 +113,9 @@ function initialize(products) {
     if (sort.value === '제목순') {
       sortedGroup = searchTermGroup.slice();
     } else if (sort.value === '최저가순') {
-      sortedGroup = products.sort((a, b) => a.price - b.price);
+      sortedGroup = searchTermGroup.sort((a, b) => a.price - b.price);
     } else {
-      sortedGroup = products.sort((a, b) => b.price - a.price);
+      sortedGroup = searchTermGroup.sort((a, b) => b.price - a.price);
     }
     console.log(sortedGroup);
     updateDisplay();
