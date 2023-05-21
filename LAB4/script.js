@@ -39,12 +39,11 @@ function initialize(products) {
 
   searchBtn.addEventListener('click', filterProducts);
     
-  window.onscroll = () => {
+  window.addEventListener('scroll', () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
         console.log(loadLine);
         loadLine();
-    }
-  }
+    }});
 
   function firstLoad() {
     const initialProducts = sortedGroup.slice(0, productsPerLine);
@@ -136,21 +135,7 @@ function initialize(products) {
     }
   }
 
-  async function displayProduct(product) {
-    const url = `images/${product.image}`;
-     await fetch(url)
-      .then( response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error: ${response.status}`);
-        }
-        return response.blob();
-      })
-      .then( blob => showProduct(blob, product) )
-      .catch( err => console.error(`Fetch problem: ${err.message}`) );
-  }
-
-  function showProduct(blob, product) {
-    const objectURL = URL.createObjectURL(blob);
+  function displayProduct(product) {
 
     const bookContainer = document.createElement('div');
     bookContainer.setAttribute('class', 'book-container');
@@ -171,7 +156,7 @@ function initialize(products) {
 
     const bookImage = document.createElement('img');
     bookImage.setAttribute('class', 'book-image');
-    bookImage.src = objectURL;
+    bookImage.src = 'images/' + product.image;
     bookImage.alt = product.title;
 
     const bookTitle = document.createElement('div');
