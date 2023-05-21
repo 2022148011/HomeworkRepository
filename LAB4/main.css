@@ -103,7 +103,7 @@ hr {
 .image-container {
     height: 250px;
     width: 165px;
-    position: absolute;
+    position: relative;
     border: 1px solid rgb(218, 218, 218);
     margin-bottom: 1px;
     display: flex;
@@ -118,7 +118,8 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 15
+    padding: 15;
+    position: absolute;
 }
 
 .click-description {
@@ -127,12 +128,13 @@ hr {
 
 .click-rating {
     color: none;
-    font-size: 1.5em
+    font-size: 1.5em;
 }
 
 .book-image {
     width: 100%;
     height: 100%;
+    position: absolute;
 }
 
 .book-title {

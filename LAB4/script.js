@@ -8,7 +8,7 @@ fetch('product.json')
   .then(json => initialize(json))
   .catch(err => console.error(`Fetch problem: ${err.message}`));
 
-function initialize(products) {
+async function initialize(products) {
   const category = document.querySelector('#category');
   const searchTerm = document.querySelector('#searchTerm');
   const sort = document.querySelector('#sort');
@@ -101,20 +101,21 @@ function initialize(products) {
     }
   }
 
-  function displayProduct(product) {
+  async function displayProduct(product) {
     const url = `images/${product.image}`;
-    fetch(url)
-      .then(response => {
+    try {
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
         }
-        return response.blob();
-      })
-      .then(blob => showProduct(blob, product))
-      .catch(err => console.error(`Fetch problem: ${err.message}`));
+        const blob = await response.blob();
+        await showProduct(blob, product);
+      } catch (err) {
+        console.error(`Fetch problem: ${err.message}`);
+      }
   }
 
-  function showProduct(blob, product) {
+  async function showProduct(blob, product) {
     const objectURL = URL.createObjectURL(blob);
 
     const bookContainer = document.createElement('div');
