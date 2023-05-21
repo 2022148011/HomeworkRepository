@@ -54,8 +54,8 @@ function initialize(products) {
 
   function loadLine() {
     console.log('loadLine()');
+    console.log('sortedGroup: ', sortedGroup);
     loading = true;
-    console.log('loading: ', loading);
     currentLine++;
     const startIndex = (currentLine - 1) * productsPerLine;
     const endIndex = (startIndex + productsPerLine > sortedGroup.length) ? sortedGroup.length : startIndex + productsPerLine;
@@ -66,9 +66,7 @@ function initialize(products) {
     for (const product of newLine) {
         displayProduct(product);
     }
-
     loading = false;
-    console.log('loading: ', loading);
   }
 
   function filterProducts(e) {
