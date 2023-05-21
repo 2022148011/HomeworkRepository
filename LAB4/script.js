@@ -31,7 +31,9 @@ function initialize(products) {
     let loading = false; // 로딩 상태
 
   sortedGroup = products;
-  loadLine();
+  while (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
+    loadLine();
+    }
 
   categoryGroup = [];
   searchTermGroup = [];
