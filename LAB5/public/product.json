@@ -1,0 +1,146 @@
+[
+    {
+        "title": "1퍼센트 부자의 법칙",
+        "author": "사이토 히토리",
+        "price": 15300,
+        "description": "전대미문의 부자 사이토 히토리의 최고 베스트셀러!",
+        "rating": 9.8,
+        "image": "cover1.jpg",
+        "category": "자기계발"
+    },
+    { 
+        "title": "기분이 태도가 되지 않게",
+        "author": "레몬심리",
+        "price": 15300,
+        "description": "30만이 선택한 스테디셀러 『기분이 태도가 되지 않게』",
+        "rating": 9.8,
+        "image": "cover2.jpg",
+        "category": "자기계발"
+    },
+    { 
+        "title": "내 장은 왜 우울할까",
+        "author": "윌리엄 데이비스",
+        "price": 19800,
+        "description": "오늘 하루를 망치고 불필요한 살을 찌우는 지긋지긋한 ‘장 우울증’에서 해방되기",
+        "rating": 9.6,
+        "image": "1048723873.jpg",
+        "category": "자연과학"
+    },
+    { 
+        "title": "다정한 것이 살아남는다",
+        "author": "브라이언 헤어, 버네사 우즈",
+        "price": 19800,
+        "description": "‘가장 간절한 순간’에 찾아온 ‘21세기 다윈의 계승자’가 쓴 ‘완벽한 책’!",
+        "rating": 8.9,
+        "image": "cover3.jpg",
+        "category": "자연과학"
+    },
+    { 
+        "title": "데일 카네기 인간관계론",
+        "author": "데일 카네기",
+        "price": 10350,
+        "description": "사람의 마음을 사로잡는 가장 빠르고 확실한 방법! 데일 카네기가 전하는 성공하는 인간관계의 비밀",
+        "rating": 9.5,
+        "image": "cover4.jpg",
+        "category": "자기계발"
+    },
+    { 
+        "title": "돌이킬 수 있는",
+        "author": "문목하",
+        "price": 13320,
+        "description": "SF와 판타지, 미스터리를 효과적으로 결합한 신인 작가 문목하의 놀라운 데뷔작",
+        "rating": 9.3,
+        "image": "cover5.jpg",
+        "category": "소설/시"
+    },
+    { 
+        "title": "물고기는 존재하지 않는다",
+        "author": "룰루 밀러",
+        "price": 15300,
+        "description": "‘방송계의 퓰리처상’ 피버디상 수상자 룰루 밀러의 사랑과 혼돈, 과학적 집착에 관한 경이롭고도 충격적인 데뷔작!",
+        "rating": 9.0,
+        "image": "cover6.jpg",
+        "category": "자연과학"
+    },
+    { 
+        "title": "방주",
+        "author": "유키 하루오",
+        "price": 14850,
+        "description": "극한의 뇌 정지 미친 반전!",
+        "rating": 9.7,
+        "image": "cover7.jpg",
+        "category": "소설/시"
+    },
+    { 
+        "title": "분자 조각가들",
+        "author": "백승만",
+        "price": 16650,
+        "description": "의약품 개발의 최전선에 있는 화학자가 들려주는 신약 개발의 역사와 숨겨진 뒷이야기들",
+        "rating": 9.8,
+        "image": "9791164052059.jpg",
+        "category": "자연과학"
+    },
+    {
+        "title": "세이노의 가르침",
+        "author": "세이노",
+        "price": 6480,
+        "description": "순자산 천억 원대 자산가, 세이노의 ‘요즘 생각’을 만나다",
+        "rating": 9.4,
+        "image": "cover8.jpg",
+        "category": "자기계발"
+    },
+    { 
+        "title": "스즈메의 문단속",
+        "author": "신카이 마코토",
+        "price": 11700,
+        "description": "『너의 이름은』 『날씨의 아이』 신카이 마코토 감독의 신작 원작소설",
+        "rating": 9.4,
+        "image": "cover9.jpg",
+        "category": "소설/시"
+    },
+    { 
+        "title": "어떤 물질의 사랑",
+        "author": "천선란",
+        "price": 13320,
+        "description": "정세랑의 다정함과 문목하의 흡인력을 두루 갖춘 역대급 괴물 신인 작가 천선란의 첫 소설집!",
+        "rating": 9.9,
+        "image": "cover10.jpg",
+        "category": "소설/시"
+    },
+    { 
+        "title": "역행자",
+        "author": "자청",
+        "price": 15750,
+        "description": "오타쿠 흙수저에서 월 1억 자동 수익을 실현한 무자본 연쇄창업마, 라이프해커 자청의 인생 역주행 공식 대공개",
+        "rating": 9.3,
+        "image": "25930427508435.jpg",
+        "category": "자기계발"
+    },
+    { 
+        "title": "이기적 유전자",
+        "author": "리처드 도킨스",
+        "price": 18000,
+        "description": "과학을 넘어선 우리 시대의 고전, 『이기적 유전자』 40주년 기념판",
+        "rating": 9.1,
+        "image": "cover11.jpg",
+        "category": "자연과학"
+    },
+    { 
+        "title": "종이 동물원",
+        "author": "켄 리우",
+        "price": 14220,
+        "description": "“마법 같은 엄마의 종이 동물만이 나의 친구였다.”.",
+        "rating": 9.6,
+        "image": "cover12.jpg",
+        "category": "소설/시"
+    },
+    { 
+        "title": "하늘과 바람과 별과 인간",
+        "author": "김상욱",
+        "price": 16020,
+        "description": "김상욱 5년 만의 신간",
+        "rating": 9.5,
+        "image": "cover13.jpg",
+        "category": "자연과학"
+    }
+]
